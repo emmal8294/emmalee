@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+    <title>Emma Lee</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<style>
+    /* Define CSS styles */
+    p {
+      font-family: sans-serif;
+    }
+
+    h2 {
+        font-family: Tahoma;
+    }
+  </style>
+
+<body>
+    <div class = "container">
+        <div class = "tab_box">
+            <button class = "tab_btn active"> Home</button>
+            <button class = "tab_btn">About</button>
+            <button class = "tab_btn"> My Work</button>
+            <button class = "tab_btn">My Other Work</button>
+            <div class = "line"></div>
+        </div>
+        <div class = "content_box">
+            <div class = "content active ">
+                <h2> Emma Lee </h2>
+                <p>
+                    Welcome! 
+                </p>
+                <a href="https://www.linkedin.com/in/emma-lee-ab1b7b289/" target = "_blank">
+                    Connect with Me!
+                </a>
+            </div>
+            <div class = "content">
+                <h2>About</h2>
+                <p>
+                    I'm a second year Computational and Systems Biology student at UCLA. Aside from biology and technology, I'm interested in the intersection of fashion, business, and economics. I'm particularly interested in the psychology behind consumers, especially those within the luxury goods market.
+                </p>
+                   
+                
+            </div>
+            <div class = "content">
+                <h2>My Work</h2>
+                <h3> Coming Soon...</h3>
+                <p>
+                    Data Science + Fashion + Beauty + Lifestyle
+                </p>
+            </div>
+            <div class = "content">
+                <h2>My Other Work</h2>
+                <p>
+                    Me talking about things that you may or may not find interesting. 
+                    <a href = "https://substack.com/@fashionablyunfashionable?r=376jji&utm_campaign=profile&utm_medium=profile-page" target = "_blank">
+                        Read Here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const EmmaLee = document.querySelectorAll('.tab_btn');
+        const all_content = document.querySelectorAll('.content');
+
+        EmmaLee.forEach((tab, index)=>{
+            tab.addEventListener('click', (e)=>{
+                EmmaLee.forEach(tab=>{tab.classList.remove('active')});
+                tab.classList.add('active');
+
+                var line = document.querySelector('.line');
+            line.style.width = e.target.offsetWidth + "px";
+            line.style.left = e.target.offsetLeft + "px";
+
+            all_content.forEach(content=>{content.classList.remove('active')});
+            all_content[index].classList.add('active');
+            })
+            
+
+        })
+    </script>
+
+    
+</body>
+</html>
